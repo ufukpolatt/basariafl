@@ -17,6 +17,7 @@ git push origin main
 ```
 
 ## 📱 Canlı Site
+- **Ana Site:** https://www.basariafl.com
 - **GitHub Pages:** https://ufukpolatt.github.io/basariafl
 - **Repository:** https://github.com/ufukpolatt/basariafl
 

@@ -17,5 +17,6 @@ echo "⬆️ GitHub'a push ediliyor..."
 git push origin main
 
 echo "✅ Deploy tamamlandı!"
-echo "🌐 Site: https://ufukpolatt.github.io/basariafl"
+echo "🌐 GitHub Pages: https://ufukpolatt.github.io/basariafl"
+echo "🌐 Custom Domain: https://www.basariafl.com"
 echo "📱 GitHub: https://github.com/ufukpolatt/basariafl"
