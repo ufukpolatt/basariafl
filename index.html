@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Başarı Anadolu Fen Lisesi - Geleceğin Liderlerini Yetiştiriyoruz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        /* Modern Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #0d1224 0%, #b1243a 50%, #8f1d30 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            margin-top: 76px;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255,255,255,0.03) 0%, transparent 50%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+        
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+            animation: float 20s infinite linear;
+        }
+        
+        .shape:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .shape:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            top: 60%;
+            right: 15%;
+            animation-delay: -5s;
+        }
+        
+        .shape:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            bottom: 20%;
+            left: 30%;
+            animation-delay: -10s;
+        }
+        
+        .shape:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            top: 30%;
+            right: 40%;
+            animation-delay: -15s;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(180deg); }
+            100% { transform: translateY(0px) rotate(360deg); }
+        }
+        
+        /* Navbar Styles */
+        .navbar {
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            color: #b1243a !important;
+        }
+        
+        .nav-link {
+            color: #0d1224 !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover,
+        .nav-link:focus,
+        .nav-link:active {
+            color: #b1243a !important;
+        }
+        
+        .nav-link.active,
+        .nav-link.active:hover,
+        .nav-link.active:focus,
+        .nav-link.active:active {
+            color: #b1243a !important;
+            font-weight: 600;
+        }
+        
+        /* Force override Bootstrap's default blue color */
+        .nav-link:hover,
+        .nav-link:focus,
+        .nav-link:active {
+            color: #b1243a !important;
+            background-color: transparent !important;
+            text-decoration: none !important;
+        }
+        
+        /* Button Styles */
+        .btn-modern {
+            border-radius: 50px;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .btn-modern:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Values Section */
+        .values-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        }
+        
+        .value-item {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(177, 36, 58, 0.1);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #0d1224 0%, #b1243a 100%);
+        }
+        
+        .value-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(177, 36, 58, 0.15);
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(177, 36, 58, 0.1) 0%, rgba(13, 18, 36, 0.1) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .value-item:hover .value-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, rgba(177, 36, 58, 0.2) 0%, rgba(13, 18, 36, 0.2) 100%);
+        }
+        
+        /* Typography */
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            font-weight: 300;
+            opacity: 0.8;
+        }
+        
+        /* Why Choose Us Section */
+        .why-choose-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        }
+        
+        .why-choose-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(177, 36, 58, 0.1);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .why-choose-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #0d1224 0%, #b1243a 100%);
+        }
+        
+        .why-choose-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(177, 36, 58, 0.15);
+        }
+        
+        .why-choose-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(177, 36, 58, 0.1) 0%, rgba(13, 18, 36, 0.1) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .why-choose-card:hover .why-choose-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, rgba(177, 36, 58, 0.2) 0%, rgba(13, 18, 36, 0.2) 100%);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" id="navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-graduation-cap me-2"></i>Başarı Anadolu Fen Lisesi
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="uniforma.html">Üniforma</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="iletisim.html">İletişim</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center hero-content">
+                    <div class="mb-4">
+                        <span class="badge bg-white bg-opacity-20 backdrop-blur-sm px-4 py-2 rounded-pill text-white border border-white border-opacity-20">
+                            <span class="d-inline-block bg-white rounded-circle me-2" style="width: 8px; height: 8px;"></span>
+                            Lise Eğitimi
+                        </span>
+                    </div>
+                    <h1 class="hero-title">
+                        Geleceğin Liderlerini <span class="text-warning">Yetiştiriyoruz</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Modern eğitim yaklaşımları ve teknolojik altyapımızla öğrencilerimizi 
+                        başarıya götüren yolda rehberlik ediyoruz.
+                    </p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                                                        <a href="hakkimizda.html" class="btn btn-warning btn-modern btn-lg">
+                                    <i class="fas fa-info-circle me-2"></i>Hakkımızda
+                                </a>
+                        <a href="iletisim.html" class="btn btn-outline-light btn-modern btn-lg">
+                            <i class="fas fa-phone me-2"></i>İletişim
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-5 why-choose-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">
+                    Neden <span class="text-primary">Başarı Anadolu Fen Lisesi?</span>
+                </h2>
+                <p class="section-subtitle text-muted">
+                    Geleceğin teknolojilerini öğrenmek ve kariyerinizde fark yaratmak için size sunduğumuz fırsatlar.
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="why-choose-card">
+                        <div class="why-choose-icon">
+                            <i class="fas fa-flask fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Modern Laboratuvarlar</h4>
+                        <p class="text-muted">En son teknoloji ile donatılmış laboratuvarlarımızda pratik deneyim kazanın.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="why-choose-card">
+                        <div class="why-choose-icon">
+                            <i class="fas fa-graduation-cap fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Uzman Akademik Kadro</h4>
+                        <p class="text-muted">Alanında uzman akademisyenlerimizle kaliteli eğitim alın.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="why-choose-card">
+                        <div class="why-choose-icon">
+                            <i class="fas fa-users fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Öğrenci Toplulukları</h4>
+                        <p class="text-muted">Öğrencilerimizin sosyal ve kültürel gelişimlerini destekleyen zengin kulüp ve etkinlik programları.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="why-choose-card">
+                        <div class="why-choose-icon">
+                            <i class="fas fa-chart-line fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Yenilikçi Eğitim</h4>
+                        <p class="text-muted">Teknoloji destekli, proje tabanlı ve öğrenci merkezli modern eğitim yaklaşımı.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-5 values-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title text-primary">Değerlerimiz</h2>
+                <p class="section-subtitle text-muted">Eğitim felsefemizin temelini oluşturan değerler</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-laptop-code fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3 text-center">Teknoloji Odaklı</h4>
+                        <p class="text-muted text-center">Yenilikçi eğitim teknolojileriyle öğrenme ve dijital çağın gerektirdiği becerileri kazandırma.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-globe fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3 text-center">Yabancı Dil</h4>
+                        <p class="text-muted text-center">En az bir yabancı dili etkin kullanabilen, evrensel bakış açısına sahip bireyler yetiştirme.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-leaf fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3 text-center">Çevre Bilinci</h4>
+                        <p class="text-muted text-center">Doğa temalı eğitim programlarıyla çevre bilincini geliştirme ve sosyal sorumluluk.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-users fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3 text-center">Toplumsal Değerler</h4>
+                        <p class="text-muted text-center">Çeşitlilik gösteren sosyal çalışmalarla farklılıklara saygılı bireyler yetiştirme.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3 text-center">Analitik Düşünme</h4>
+                        <p class="text-muted text-center">Öğrencilerimizin analitik düşünme ve sorgulama becerilerini geliştirme.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-heart fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3 text-center">Kişisel Gelişim</h4>
+                        <p class="text-muted text-center">Her öğrencimizin bireysel potansiyelini keşfetmesine yardımcı olma.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-graduation-cap me-2" style="color: #b1243a;"></i>
+                        Başarı Anadolu Fen Lisesi
+                    </h5>
+                    <p class="text-muted mb-3">Geleceğin liderlerini yetiştiriyoruz</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/fenmategitimkurumlari/" target="_blank" class="text-white me-3">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">Hızlı Linkler</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="index.html" class="text-muted text-decoration-none">Ana Sayfa</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="hakkimizda.html" class="text-muted text-decoration-none">Hakkımızda</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="uniforma.html" class="text-muted text-decoration-none">Uniforma</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="iletisim.html" class="text-muted text-decoration-none">İletişim</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">İletişim Bilgileri</h6>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            Barbaros Mahallesi Hasansever Sokak No:11, Çanakkale
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-phone me-2"></i>
+                            0286 213 51 16
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted mb-0">&copy; 2024 Başarı Anadolu Fen Lisesi. Tüm hakları saklıdır.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Only prevent default for same page links (starting with #)
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    
+                    const targetSection = document.querySelector(href);
+                    
+                    if (targetSection) {
+                        const offsetTop = targetSection.offsetTop - 80; // Navbar height offset
+                        
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+                // For external links (like other pages), let the browser handle navigation normally
+            });
+        });
+
+        // Active navigation link highlighting
+        function setActiveNavLink() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href');
+                
+                if (href === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        // Set active link on page load
+        setActiveNavLink();
+    </script>
+</body>
+</html> 

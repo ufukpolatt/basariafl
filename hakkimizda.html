@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda - Başarı Anadolu Fen Lisesi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        /* Modern Minimalist Design */
+        .hero-minimal {
+            background: linear-gradient(135deg, #0d1224 0%, #b1243a 100%);
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-minimal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+        
+        /* Modern Cards */
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(177, 36, 58, 0.1);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(135deg, #0d1224 0%, #b1243a 100%);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(177, 36, 58, 0.15);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(177, 36, 58, 0.1) 0%, rgba(13, 18, 36, 0.1) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, rgba(177, 36, 58, 0.2) 0%, rgba(13, 18, 36, 0.2) 100%);
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0d1224 0%, #b1243a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+        
+        /* Mission Vision Cards */
+        .mission-card {
+            background: linear-gradient(135deg, #0d1224 0%, #b1243a 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mission-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .mission-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .value-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(177, 36, 58, 0.1);
+            text-align: center;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(177, 36, 58, 0.15);
+        }
+        
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(177, 36, 58, 0.1) 0%, rgba(13, 18, 36, 0.1) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover .value-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, rgba(177, 36, 58, 0.2) 0%, rgba(13, 18, 36, 0.2) 100%);
+        }
+        
+        /* Typography */
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            font-weight: 300;
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-minimal {
+                min-height: 50vh;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" id="navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-graduation-cap me-2"></i>Başarı Anadolu Fen Lisesi
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="hakkimizda.html">Hakkımızda</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="uniforma.html">Üniforma</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="iletisim.html">İletişim</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-minimal" style="margin-top: 76px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center hero-content">
+                    <h1 class="hero-title mb-4">Başarı Anadolu Fen Lisesi</h1>
+                    <p class="hero-subtitle">15 yıldır Çanakkale'de lise eğitiminde öncü bir kurum olarak hizmet veriyoruz</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Lise Eğitimi</h4>
+                        <p class="text-muted">9-12. sınıflar için kapsamlı eğitim programları sunuyoruz.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Deneyimli Kadro</h4>
+                        <p class="text-muted">Alanında uzman öğretmenlerimizle kaliteli eğitim.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-laptop fa-2x text-primary"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Modern Teknoloji</h4>
+                        <p class="text-muted">En son teknolojik altyapı ile dijital çağın gereksinimleri.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    
+    <!-- Mission & Vision Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="mission-card h-100">
+                        <div class="mission-content">
+                            <h3 class="fw-bold mb-4">Misyonumuz</h3>
+                            <p class="mb-4">
+                                Öğrencilerimizi geleceğe hazırlarken onların tüm yönleriyle gelişimini desteklemektir.
+                            </p>
+                            
+                            <h5 class="fw-bold text-warning mb-3">Akademik Mükemmellik</h5>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>Gelişim odaklı öğretim kadromuzla yenilikçi eğitim yaklaşımları sunuyoruz</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>Öğrencilerimizin analitik düşünme ve sorgulama becerilerini geliştiriyoruz</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>Uluslararası projeler ve güçlü yabancı dil programlarımızla evrensel bakış açısı kazandırıyoruz</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>Teknolojiyi etkin kullanabilen yetkin bireyler yetiştiriyoruz</li>
+                            </ul>
+                            
+                            <h5 class="fw-bold text-warning mb-3">Kişisel Gelişim</h5>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>Öğrencilerimizin psikososyal gelişimlerini yakından takip ediyoruz</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>Her öğrencimizin bireysel potansiyelini keşfetmesine yardımcı oluyoruz</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>Psikolojik dayanıklılıklarını artıracak destek programları sunuyoruz</li>
+                            </ul>
+                            
+                            <h5 class="fw-bold text-warning mb-3">Çevre ve Toplumsal Sorumluluk</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>Doğa temalı eğitim programlarımızla çevre bilincini geliştiriyoruz</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>Çeşitlilik gösteren sosyal çalışmalarımızla farklılıklara saygılı bireyler yetiştiriyoruz</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>Sorumluluk sahibi, toplumsal değerlere bağlı gençler mezun ediyoruz</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="mission-card h-100">
+                        <div class="mission-content">
+                            <h3 class="fw-bold mb-4">Vizyonumuz</h3>
+                            <p class="mb-4">
+                                Başarı Anadolu Fen Lisesi olarak vizyonumuz; Atatürk ilke ve inkılapları ışığında, topluma ve geleceğe yön verecek bireyler yetiştirmektir.
+                            </p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>Güçlü akademik donanıma sahip</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>En az bir yabancı dili etkin kullanabilen</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>Geleceğin teknolojilerine yön veren</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>Tüketen değil üreten</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>Çevre ve sosyal sorumluluk bilinci gelişmiş</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-graduation-cap me-2" style="color: #b1243a;"></i>
+                        Başarı Anadolu Fen Lisesi
+                    </h5>
+                    <p class="text-muted mb-3">Geleceğin liderlerini yetiştiriyoruz</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/fenmategitimkurumlari/" target="_blank" class="text-white me-3">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">Hızlı Linkler</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="index.html" class="text-muted text-decoration-none">Ana Sayfa</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="hakkimizda.html" class="text-muted text-decoration-none">Hakkımızda</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="uniforma.html" class="text-muted text-decoration-none">Üniforma</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="iletisim.html" class="text-muted text-decoration-none">İletişim</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">İletişim Bilgileri</h6>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            Barbaros Mahallesi Hasansever Sokak No:11, Çanakkale
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-phone me-2"></i>
+                            0286 213 51 16
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted mb-0">&copy; 2024 Başarı Anadolu Fen Lisesi. Tüm hakları saklıdır.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

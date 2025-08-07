@@ -1,0 +1,587 @@
+/* Custom CSS for Başarı Okulu */
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #0d1224;
+}
+
+/* Navigation */
+.navbar {
+    transition: all 0.3s ease;
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #b1243a !important;
+}
+
+.nav-link {
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #b1243a !important;
+}
+
+.nav-link.active {
+    color: #b1243a !important;
+    font-weight: 600;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #b1243a !important;
+}
+
+.navbar-nav .nav-link.active {
+    color: #b1243a !important;
+    font-weight: 600;
+}
+
+/* Bootstrap override for navbar links */
+.navbar-nav .nav-link {
+    color: #0d1224 !important;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:active {
+    color: #b1243a !important;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.active:hover,
+.navbar-nav .nav-link.active:focus,
+.navbar-nav .nav-link.active:active {
+    color: #b1243a !important;
+    font-weight: 600;
+}
+
+/* Force override Bootstrap's default blue color */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:active,
+.navbar-nav .nav-link.show {
+    color: #b1243a !important;
+    background-color: transparent !important;
+}
+
+/* Override any Bootstrap blue colors */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:active {
+    color: #b1243a !important;
+    text-decoration: none !important;
+}
+
+/* Ultimate Bootstrap override */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:active,
+.navbar-nav .nav-link.show,
+.navbar-nav .nav-link[aria-expanded="true"] {
+    color: #b1243a !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Override Bootstrap's :hover pseudo-class */
+.navbar-nav .nav-link:hover {
+    color: #b1243a !important;
+}
+
+/* Override Bootstrap's :focus pseudo-class */
+.navbar-nav .nav-link:focus {
+    color: #b1243a !important;
+}
+
+/* Override Bootstrap's :active pseudo-class */
+.navbar-nav .nav-link:active {
+    color: #b1243a !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #0d1224 0%, #b1243a 100%);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease 0.2s both;
+}
+
+.hero-section .btn {
+    animation: fadeInUp 1s ease 0.4s both;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* About Section */
+#about {
+    padding: 5rem 0;
+}
+
+#about h2 {
+    color: #b1243a;
+    margin-bottom: 2rem;
+}
+
+#about .lead {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+#about .col-6 {
+    transition: transform 0.3s ease;
+}
+
+#about .col-6:hover {
+    transform: translateY(-5px);
+}
+
+#about i {
+    color: #b1243a;
+}
+
+/* Programs Section */
+#programs {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.card {
+    transition: all 0.3s ease;
+    border: none;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.bg-primary.bg-opacity-10 {
+    background-color: rgba(177, 36, 58, 0.1) !important;
+}
+
+.bg-warning.bg-opacity-10 {
+    background-color: rgba(255, 193, 7, 0.1) !important;
+}
+
+.bg-success.bg-opacity-10 {
+    background-color: rgba(25, 135, 84, 0.1) !important;
+}
+
+/* Gallery Section */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover img {
+    filter: brightness(1.1);
+}
+
+/* Contact Section */
+.contact-info .d-flex {
+    transition: transform 0.3s ease;
+}
+
+.contact-info .d-flex:hover {
+    transform: translateX(10px);
+}
+
+.contact-info i {
+    color: #b1243a;
+}
+
+/* Form Styles */
+.form-control, .form-select {
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #b1243a;
+    box-shadow: 0 0 0 0.2rem rgba(177, 36, 58, 0.25);
+}
+
+.btn {
+    border-radius: 10px;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #b1243a 0%, #8f1d30 100%);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #8f1d30 0%, #7a1a28 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(177, 36, 58, 0.3);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #ffc107 0%, #ffca2c 100%);
+    border: none;
+    color: #000;
+}
+
+.btn-warning:hover {
+    background: linear-gradient(135deg, #ffca2c 0%, #ffc720 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+}
+
+.btn-outline-light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #212529 0%, #343a40 100%);
+}
+
+footer .text-muted {
+    color: #e9ecef !important;
+}
+
+footer a {
+    color: #e9ecef !important;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffffff !important;
+    text-decoration: none;
+}
+
+footer h5, footer h6 {
+    color: #ffffff !important;
+}
+
+footer .social-links a {
+    color: #ffffff !important;
+}
+
+footer .social-links a:hover {
+    color: #b1243a !important;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #b1243a;
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .btn-lg {
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .card-body {
+        padding: 1.5rem;
+    }
+    
+    #about .col-6 {
+        margin-bottom: 2rem;
+    }
+    
+    /* Mobile navbar standardization */
+    .navbar-brand {
+        font-size: 1.2rem !important;
+    }
+    
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .navbar-toggler {
+        border: none;
+        padding: 0.25rem 0.5rem;
+    }
+    
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-section .d-flex {
+        flex-direction: column;
+        gap: 1rem !important;
+    }
+    
+    .hero-section .btn {
+        width: 100%;
+    }
+    
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Section Padding */
+section {
+    padding: 4rem 0;
+}
+
+/* Text Colors */
+.text-primary {
+    color: #b1243a !important;
+}
+
+.text-warning {
+    color: #ffc107 !important;
+}
+
+.text-success {
+    color: #198754 !important;
+}
+
+/* Background Colors */
+.bg-light {
+    background-color: #ffffff !important;
+}
+
+/* Shadow Effects */
+.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.shadow {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Hover Effects */
+.navbar-nav .nav-link:hover {
+    color: #0d6efd !important;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Loading Animation */
+.loading {
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Gallery Styles */
+.gallery-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(177, 36, 58, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-card:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-info {
+    text-align: center;
+    color: white;
+}
+
+/* Uniform Styles */
+.uniform-card {
+    transition: all 0.3s ease;
+}
+
+.uniform-card:hover {
+    transform: translateY(-5px);
+}
+
+.uniform-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.uniform-image img {
+    transition: transform 0.3s ease;
+}
+
+.uniform-card:hover .uniform-image img {
+    transform: scale(1.05);
+}
+
+/* Contact Icon Styles */
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(177, 36, 58, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Page Header Styles */
+.page-header {
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b1243a;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #8f1d30;
+} 
